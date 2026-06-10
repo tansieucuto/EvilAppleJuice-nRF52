@@ -10,7 +10,6 @@ I didn't invent this shit. I just ported their logic to work on nRF52 hardware u
 ## What it does
 - Spams Apple proximity pairing BLE packets using nRF52.
 - Randomizes MAC addresses and Tx Power continuously.
-- Stripped out all the useless LED and button code. Plug it in and it blasts RF.
 
 ## How to use
 1. Clone this repo.
