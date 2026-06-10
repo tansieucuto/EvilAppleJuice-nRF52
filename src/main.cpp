@@ -2,8 +2,6 @@
 #include <bluefruit.h>
 #include "device.h"
 
-uint32_t delayMilliseconds = 100;
-
 void setup() {
   Serial.begin(115200);
   Bluefruit.begin();
@@ -40,8 +38,13 @@ void loop() {
 
   Bluefruit.Advertising.setInterval(32, 32);
 
+  uint32_t activeDelay = 100;
+  if (dev.type == APPLE_ACTION) {
+    activeDelay = 800;
+  }
+
   Bluefruit.Advertising.start(0);
-  delay(delayMilliseconds);
+  delay(activeDelay); 
   Bluefruit.Advertising.stop();
 
   int rand_val = random(100);
