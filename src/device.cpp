@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "devices.hpp"
+#include "devices.h"
 
 void generatePacket(const AppleDevice& device, uint8_t* buffer, size_t& outLength) {
   memset(buffer, 0, 31); // Clear buffer
