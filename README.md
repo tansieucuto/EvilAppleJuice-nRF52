@@ -1,35 +1,22 @@
 # EvilAppleJuice-nRF52
 
-## Overview
-This project is a direct hardware port of the EvilAppleJuice BLE spoofing and proximity pairing tool, rebuilt from the ground up for the nRF52840 microcontroller. By utilizing the Adafruit Bluefruit library, this version interacts directly with the Nordic hardware HAL, completely dropping the bloated ESP32 BLE wrappers for maximum RF efficiency.
+A no-bullshit port of the EvilAppleJuice BLE spammer from ESP32 to the nRF52840 microcontroller.
 
-## Credits and Acknowledgments
-This repository is strictly a hardware port and optimization effort. The core logic, payload structures, and original concept belong entirely to the security researchers who pioneered this method. 
+## Credits
+All the fucking credit goes to [ckcr4lyf](https://github.com/ckcr4lyf/EvilAppleJuice-ESP32) for the original ESP32 implementation.
 
-Massive respect and credit go to:
-- ronaldstoner
-- chipik
-- _hexway
-- ECTO-1A
-- SAY-10
+I didn't invent this shit. I just ported their logic to work on nRF52 hardware using the Adafruit Bluefruit library. Go star their original repo.
 
-## Key Features
-- Optimized for nRF52: Uses direct hardware APIs for faster execution and cleaner signal broadcasting.
-- Pure RF Spamming: All unnecessary LED indicators, physical button interrupts, and flash memory saving mechanics have been stripped out. 
-- Dynamic Proximity Spoofing: Randomizes Tx Power across cycles to simulate physical movement, bypassing static RSSI filters.
-- Strict Protocol Adherence: Enforces strict 31-byte maximum payload limits to ensure passive scanning by iOS devices triggers reliably.
-- Continuous MAC Randomization: Generates compliant random static MAC addresses per cycle.
+## What it does
+- Spams Apple proximity pairing BLE packets using nRF52.
+- Randomizes MAC addresses and Tx Power continuously.
+- Stripped out all the useless LED and button code. Plug it in and it blasts RF.
 
-## Hardware Requirements
-- Any nRF52840 development board (Pro Micro nRF52840, Adafruit Feather nRF52840, etc.)
-- PlatformIO installed via VSCode.
+## How to use
+1. Clone this repo.
+2. Open it in PlatformIO.
+3. Flash it to your nRF52 board.
+4. Let it run.
 
-## Installation and Flashing
-1. Clone this repository.
-2. Open the project folder in PlatformIO.
-3. Review the platformio.ini file to ensure the environment matches your specific nRF52 board variant.
-4. Build and upload via USB. 
-5. The board will begin transmitting automatically upon receiving power.
-
-## Disclaimer
-This project is provided for educational purposes, hardware testing, and security research only. Do not use this tool to disrupt public spaces or harass individuals. You are solely responsible for your own actions.
+## Disclaimer for Dumbasses
+This project is for educational purposes, hardware testing, and security research ONLY. If you use this shit to harass people, disrupt flights, or do anything illegal, you are on your own. Don't be a fucking script kiddie. I am not responsible for your stupid actions.
