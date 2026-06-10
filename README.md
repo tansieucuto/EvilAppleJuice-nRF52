@@ -1,7 +1,5 @@
 # EvilAppleJuice-nRF52
 
-[Insert image of your nRF52 board here]
-
 ## Overview
 This project is a direct hardware port of the EvilAppleJuice BLE spoofing and proximity pairing tool, rebuilt from the ground up for the nRF52840 microcontroller. By utilizing the Adafruit Bluefruit library, this version interacts directly with the Nordic hardware HAL, completely dropping the bloated ESP32 BLE wrappers for maximum RF efficiency.
 
