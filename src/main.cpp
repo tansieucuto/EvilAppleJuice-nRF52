@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <bluefruit.h>
-#include "devices.h"
+#include "device.h"
 
 uint32_t delayMilliseconds = 100;
 
